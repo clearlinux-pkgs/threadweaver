@@ -6,7 +6,7 @@
 #
 Name     : threadweaver
 Version  : 5.52.0
-Release  : 6
+Release  : 7
 URL      : https://download.kde.org/stable/frameworks/5.52/threadweaver-5.52.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.52/threadweaver-5.52.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.52/threadweaver-5.52.0.tar.xz.sig
@@ -25,14 +25,6 @@ Helper for multithreaded programming
 ## Introduction
 ThreadWeaver is a helper for multithreaded programming.  It uses a job-based
 interface to queue tasks and execute them in an efficient way.
-
-%package abi
-Summary: abi components for the threadweaver package.
-Group: Default
-
-%description abi
-abi components for the threadweaver package.
-
 
 %package dev
 Summary: dev components for the threadweaver package.
@@ -69,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541881285
+export SOURCE_DATE_EPOCH=1542757620
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -77,7 +69,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1541881285
+export SOURCE_DATE_EPOCH=1542757620
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/threadweaver
 cp COPYING.LIB %{buildroot}/usr/share/package-licenses/threadweaver/COPYING.LIB
@@ -87,10 +79,6 @@ popd
 
 %files
 %defattr(-,root,root,-)
-
-%files abi
-%defattr(-,root,root,-)
-/usr/share/abi/libKF5ThreadWeaver.so.5.52.0.abi
 
 %files dev
 %defattr(-,root,root,-)
