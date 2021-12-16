@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : threadweaver
-Version  : 5.88.0
-Release  : 44
-URL      : https://download.kde.org/stable/frameworks/5.88/threadweaver-5.88.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.88/threadweaver-5.88.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.88/threadweaver-5.88.0.tar.xz.sig
+Version  : 5.89.0
+Release  : 45
+URL      : https://download.kde.org/stable/frameworks/5.89/threadweaver-5.89.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.89/threadweaver-5.89.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.89/threadweaver-5.89.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : LGPL-2.0 LGPL-2.1
+License  : CC0-1.0 LGPL-2.0 LGPL-2.1
 Requires: threadweaver-lib = %{version}-%{release}
 Requires: threadweaver-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
@@ -57,15 +57,15 @@ license components for the threadweaver package.
 
 
 %prep
-%setup -q -n threadweaver-5.88.0
-cd %{_builddir}/threadweaver-5.88.0
+%setup -q -n threadweaver-5.89.0
+cd %{_builddir}/threadweaver-5.89.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637003645
+export SOURCE_DATE_EPOCH=1639678685
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -81,11 +81,12 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1637003645
+export SOURCE_DATE_EPOCH=1639678685
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/threadweaver
-cp %{_builddir}/threadweaver-5.88.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/threadweaver/9a1929f4700d2407c70b507b3b2aaf6226a9543c
-cp %{_builddir}/threadweaver-5.88.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/threadweaver/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/threadweaver-5.89.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/threadweaver/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/threadweaver-5.89.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/threadweaver/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
+cp %{_builddir}/threadweaver-5.89.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/threadweaver/20079e8f79713dce80ab09774505773c926afa2a
 pushd clr-build
 %make_install
 popd
@@ -173,9 +174,10 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5ThreadWeaver.so.5
-/usr/lib64/libKF5ThreadWeaver.so.5.88.0
+/usr/lib64/libKF5ThreadWeaver.so.5.89.0
 
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/threadweaver/20079e8f79713dce80ab09774505773c926afa2a
+/usr/share/package-licenses/threadweaver/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
 /usr/share/package-licenses/threadweaver/9a1929f4700d2407c70b507b3b2aaf6226a9543c
