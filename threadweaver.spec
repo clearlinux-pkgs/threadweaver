@@ -6,7 +6,7 @@
 #
 Name     : threadweaver
 Version  : 5.103.0
-Release  : 59
+Release  : 60
 URL      : https://download.kde.org/stable/frameworks/5.103/threadweaver-5.103.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.103/threadweaver-5.103.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.103/threadweaver-5.103.0.tar.xz.sig
@@ -66,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1676308964
+export SOURCE_DATE_EPOCH=1676872919
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -82,7 +82,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1676308964
+export SOURCE_DATE_EPOCH=1676872919
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/threadweaver
 cp %{_builddir}/threadweaver-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/threadweaver/9a1929f4700d2407c70b507b3b2aaf6226a9543c || :
