@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : threadweaver
-Version  : 5.104.0
-Release  : 61
-URL      : https://download.kde.org/stable/frameworks/5.104/threadweaver-5.104.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.104/threadweaver-5.104.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.104/threadweaver-5.104.0.tar.xz.sig
+Version  : 5.105.0
+Release  : 62
+URL      : https://download.kde.org/stable/frameworks/5.105/threadweaver-5.105.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.105/threadweaver-5.105.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.105/threadweaver-5.105.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CC0-1.0 LGPL-2.0 LGPL-2.1
@@ -59,15 +59,15 @@ license components for the threadweaver package.
 
 
 %prep
-%setup -q -n threadweaver-5.104.0
-cd %{_builddir}/threadweaver-5.104.0
+%setup -q -n threadweaver-5.105.0
+cd %{_builddir}/threadweaver-5.105.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679523987
+export SOURCE_DATE_EPOCH=1681143952
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -83,7 +83,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1679523987
+export SOURCE_DATE_EPOCH=1681143952
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/threadweaver
 cp %{_builddir}/threadweaver-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/threadweaver/9a1929f4700d2407c70b507b3b2aaf6226a9543c || :
@@ -176,7 +176,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5ThreadWeaver.so.5
-/usr/lib64/libKF5ThreadWeaver.so.5.104.0
+/usr/lib64/libKF5ThreadWeaver.so.5.105.0
 
 %files license
 %defattr(0644,root,root,0755)
